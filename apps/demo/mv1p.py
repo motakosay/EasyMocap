@@ -115,4 +115,4 @@ if __name__ == "__main__":
         mv1pmf_skel(dataset, check_repro=True, args=args)
     mv1pmf_smpl(dataset, args)
     
-  #/content/data --out /content/data/output/smpl --vis_det --vis_repro --undis --sub_vis 1 7 13 19 --vis_smpl...........arguments!
+#/content/data --out /content/data/output/smpl --vis_det --vis_repro --undis --sub_vis 1 7 13 19 --vis_smpl...........arguments!
