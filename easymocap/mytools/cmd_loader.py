@@ -91,7 +91,7 @@ def save_parser(args):
         yaml.dump(res, f)
 
 def parse_parser(parser):
-    args = parser.parse_args()
+    args = parser.parse_args() #extract command line arguments
     if args.out is None:
         print(' - [Warning] Please specify the output path `--out ${out}`')
         print(' - [Warning] Default to {}/output'.format(args.path))
