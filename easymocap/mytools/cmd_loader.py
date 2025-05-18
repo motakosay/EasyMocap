@@ -8,7 +8,7 @@
 import os
 import argparse
 
-def load_parser():
+def load_parser():#setup parameters of easymocap tools
     parser = argparse.ArgumentParser('EasyMocap commond line tools')
     parser.add_argument('path', type=str)
     parser.add_argument('--out', type=str, default=None)
