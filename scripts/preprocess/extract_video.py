@@ -287,3 +287,7 @@ if __name__ == "__main__":
         print(args.path, ' not exists')
 
 #/content/data --handface 
+
+#path: (str) The path of data (required).
+
+#--handface: (flag) Use to enable hand and face keypoints detection (OpenPose only)
