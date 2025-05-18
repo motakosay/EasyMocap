@@ -248,16 +248,16 @@ if __name__ == "__main__":
     args = parser.parse_args()
     mode = args.mode
 
-    if os.path.isdir(args.path):
-        image_path = join(args.path, 'images')
-        os.makedirs(image_path, exist_ok=True)
-        subs_image = sorted(os.listdir(image_path))
-        subs_videos = sorted(glob(join(args.path, 'videos', '*.mp4')))
+    if os.path.isdir(args.path): #path of data is directory
+        image_path = join(args.path, 'images') #Creating an 'images' subdirectory
+        os.makedirs(image_path, exist_ok=True)#Creating an 'images' subdirectory
+        subs_image = sorted(os.listdir(image_path)) #sorts filenames alphabetically in 'image' directory
+        subs_videos = sorted(glob(join(args.path, 'videos', '*.mp4'))) #in our built-in downloaded directory videos also sort all videos .mp4
         if len(subs_videos) > len(subs_image):
             videos = sorted(glob(join(args.path, 'videos', '*.mp4')))
-            subs = []
+            subs = [] #will get be filled!
             for video in videos:
-                basename = extract_video(video, args.path, start=args.start, end=args.end, step=args.step)
+                basename = extract_video(video, args.path, start=args.start, end=args.end, step=args.step) #that first function will be executed!!
                 subs.append(basename)
         else:
             subs = sorted(os.listdir(image_path))
