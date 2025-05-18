@@ -112,6 +112,7 @@ if __name__ == "__main__":
         undis=args.undis, no_img=False, verbose=args.verbose)
     dataset.writer.save_origin = args.save_origin
 
+  #/content/data --out /content/data/output/smpl --vis_det --vis_repro --undis --sub_vis 1 7 13 19 --vis_smpl...........arguments!
     if args.skel or not os.path.exists(skel_path):
         mv1pmf_skel(dataset, check_repro=True, args=args)
     mv1pmf_smpl(dataset, args)
