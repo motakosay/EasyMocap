@@ -285,3 +285,5 @@ if __name__ == "__main__":
                     extract_yolo_hrnet(image_root, annot_root, args.ext, args.low)
     else:
         print(args.path, ' not exists')
+
+#/content/data --handface 
