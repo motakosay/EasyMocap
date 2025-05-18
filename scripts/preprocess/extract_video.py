@@ -16,25 +16,25 @@ mkdir = lambda x: os.makedirs(x, exist_ok=True)
 
 def extract_video(videoname, path, start, end, step):
     base = os.path.basename(videoname).replace('.mp4', '')
-    if not os.path.exists(videoname):
+    if not os.path.exists(videoname): #check if video file exist .mp4 if not exist it will return base
         return base
-    outpath = join(path, 'images', base)
-    if os.path.exists(outpath) and len(os.listdir(outpath)) > 0:
+    outpath = join(path, 'images', base) # define output folder
+    if os.path.exists(outpath) and len(os.listdir(outpath)) > 0: #Checks if frames already exist.....if they do, it prints the number and returns the base name.
         num_images = len(os.listdir(outpath))
         print('>> exists {} frames'.format(num_images))
         return base
     else:
-        os.makedirs(outpath, exist_ok=True)
-    video = cv2.VideoCapture(videoname)
-    totalFrames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
-    for cnt in tqdm(range(totalFrames), desc='{:10s}'.format(os.path.basename(videoname))):
+        os.makedirs(outpath, exist_ok=True) #create output folder 'images' if it doesn’t exist.
+    video = cv2.VideoCapture(videoname) #load the video using OpenCV
+    totalFrames = int(video.get(cv2.CAP_PROP_FRAME_COUNT)) #and get total frames
+    for cnt in tqdm(range(totalFrames), desc='{:10s}'.format(os.path.basename(videoname))): #cnt means count
         ret, frame = video.read()
-        if cnt < start:continue
-        if cnt >= end:break
-        if not ret:continue
+        if cnt < start:continue #Skips frames before the start index.
+        if cnt >= end:break #Stops processing at the end frame.
+        if not ret:continue #Writes frames to the output folder as .jpg images.
         cv2.imwrite(join(outpath, '{:06d}.jpg'.format(cnt)), frame)
-    video.release()
-    return base
+    video.release() #حرر الفيديو مهمة الفيديو انتهت
+    return base #return name of the video without .mp4...........turn video to imgs and give me what videos are carried on this process
 
 def extract_2d(openpose, image, keypoints, render, args):
     skip = False
