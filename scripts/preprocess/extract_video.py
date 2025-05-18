@@ -291,3 +291,5 @@ if __name__ == "__main__":
 #path: (str) The path of data (required).
 
 #--handface: (flag) Use to enable hand and face keypoints detection (OpenPose only)
+
+#we use this file just to turn videos to imgs
