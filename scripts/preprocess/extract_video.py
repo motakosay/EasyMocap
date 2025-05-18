@@ -257,7 +257,7 @@ if __name__ == "__main__":
             videos = sorted(glob(join(args.path, 'videos', '*.mp4')))
             subs = [] #will get be filled!
             for video in videos:
-                basename = extract_video(video, args.path, start=args.start, end=args.end, step=args.step) #that first function will be executed!!
+                basename = extract_video(video, args.path, start=args.start, end=args.end, step=args.step) #that first function will be executed!!....I have only video, args.path (data)
                 subs.append(basename)
         else:
             subs = sorted(os.listdir(image_path))
