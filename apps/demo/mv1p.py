@@ -94,7 +94,7 @@ def mv1pmf_smpl(dataset, args, weight_pose=None, weight_shape=None):
 if __name__ == "__main__":
     from easymocap.mytools import load_parser, parse_parser
     from easymocap.dataset import CONFIG, MV1PMF
-    parser = load_parser()
+    parser = load_parser() #setup for  EasyMocap command-line tools.
     parser.add_argument('--skel', action='store_true')
     args = parse_parser(parser)
     help="""
