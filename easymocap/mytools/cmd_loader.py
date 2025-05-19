@@ -105,8 +105,8 @@ def parse_parser(parser):
         newsubs = sorted(os.listdir(join(args.path, 'images'))) #It lists all files and directories inside the folder located at args.path/images
         clips = []
         for newsub in newsubs:
-            if newsub.split('+')[0] in subs:
-                clips.append(newsub)
+            if newsub.split('+')[0] in subs: # I guess he mean "&" not "+" https://www.youtube.com/watch?v=xyz789&t=107s.............If `newsub = "foo+bar"` and `subs = ["foo", "baz"]`, then: - `newsub.split('+')[0]` → `"foo"` - `"foo" in subs` → `True`
+                clips.append(newsub) #still in development!!
         for sub in subs:
             if os.path.exists(join(args.path, 'images', sub)):
                 clips.append(sub)
