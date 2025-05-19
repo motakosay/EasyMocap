@@ -109,7 +109,7 @@ if __name__ == "__main__":
     skel_path = join(args.out, 'keypoints3d')
     dataset = MV1PMF(args.path, annot_root=args.annot, cams=args.sub, out=args.out,
         config=CONFIG[args.body], kpts_type=args.body,
-        undis=args.undis, no_img=False, verbose=args.verbose) #args.sub = ordered Imgs according to their integer value
+        undis=args.undis, no_img=False, verbose=args.verbose) #args.sub = ordered Imgs according to their integer value, kpts_type = k points
     dataset.writer.save_origin = args.save_origin
     if args.skel or not os.path.exists(skel_path):
         mv1pmf_skel(dataset, check_repro=True, args=args)
