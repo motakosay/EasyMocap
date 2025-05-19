@@ -111,7 +111,7 @@ if __name__ == "__main__":
         config=CONFIG[args.body], kpts_type=args.body,
         undis=args.undis, no_img=False, verbose=args.verbose) #args.sub = ordered Imgs according to their integer value, kpts_type = key points
     dataset.writer.save_origin = args.save_origin
-    if args.skel or not os.path.exists(skel_path):
+    if args.skel or not os.path.exists(skel_path): #if one of them of both conditions are true.....if block will be executed
         mv1pmf_skel(dataset, check_repro=True, args=args)
     mv1pmf_smpl(dataset, args)
     
