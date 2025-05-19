@@ -100,8 +100,8 @@ def parse_parser(parser):
         assert os.path.exists(args.from_file), args.from_file
         with open(args.from_file) as f:
             datas = f.readlines()
-            subs = [d for d in datas if not d.startswith('#')]
-            subs = [d.rstrip().replace('https://www.youtube.com/watch?v=', '') for d in subs]
+            subs = [d for d in datas if not d.startswith('#')] # example Input: subs = ['https://www.youtube.com/watch?v=abc123  ', 'https://www.youtube.com/watch?v=xyz789']
+            subs = [d.rstrip().replace('https://www.youtube.com/watch?v=', '') for d in subs] #After this line: subs = ['abc123', 'xyz789'] ids only
         newsubs = sorted(os.listdir(join(args.path, 'images')))
         clips = []
         for newsub in newsubs:
