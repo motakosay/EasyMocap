@@ -111,7 +111,7 @@ def parse_parser(parser):
             if os.path.exists(join(args.path, 'images', sub)):
                 clips.append(sub)
         args.sub = clips
-    if len(args.sub) == 0 and os.path.exists(join(args.path, 'images')):
+    if len(args.sub) == 0 and os.path.exists(join(args.path, 'images')): #args.sub is empty and has images folder inside our path
         args.sub = sorted(os.listdir(join(args.path, 'images')))
         if args.sub[0].isdigit():
             args.sub = sorted(args.sub, key=lambda x:int(x))
