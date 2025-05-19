@@ -106,7 +106,7 @@ if __name__ == "__main__":
 """.format(args.path, ', '.join(args.sub), args.out, 
     args.model, args.gender, args.body)
     print(help)
-    skel_path = join(args.out, 'keypoints3d')
+    skel_path = join(args.out, 'keypoints3d') #skeleton_path = results/keypoints3d
     dataset = MV1PMF(args.path, annot_root=args.annot, cams=args.sub, out=args.out,
         config=CONFIG[args.body], kpts_type=args.body,
         undis=args.undis, no_img=False, verbose=args.verbose) #args.sub = ordered Imgs according to their integer value, kpts_type = key points
