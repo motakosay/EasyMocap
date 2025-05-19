@@ -114,7 +114,7 @@ def parse_parser(parser):
     if len(args.sub) == 0 and os.path.exists(join(args.path, 'images')): #args.sub is empty and has images folder inside our path
         args.sub = sorted(os.listdir(join(args.path, 'images'))) #args.sub = ['123', 'other']
         if args.sub[0].isdigit():# if args.sub[0].isdigit():   # True, because '123' is all digits
-            args.sub = sorted(args.sub, key=lambda x:int(x))
+            args.sub = sorted(args.sub, key=lambda x:int(x)) # ordered according to their integer value
     args.opts = {args.opts[2*i]:float(args.opts[2*i+1]) for i in range(len(args.opts)//2)}
     save_parser(args)
     return args
