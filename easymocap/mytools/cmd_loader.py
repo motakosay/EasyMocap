@@ -92,11 +92,11 @@ def save_parser(args):
 
 def parse_parser(parser):
     args = parser.parse_args() #extract command line arguments
-    if args.out is None:
+    if args.out is None: # Handle Output Path: If the --out argument is missing
         print(' - [Warning] Please specify the output path `--out ${out}`')
         print(' - [Warning] Default to {}/output'.format(args.path))
         args.out = join(args.path, 'output')
-    if args.from_file is not None:
+    if args.from_file is not None: #youtube.......Process Input File, reads its lines, and extracts YouTube video IDs
         assert os.path.exists(args.from_file), args.from_file
         with open(args.from_file) as f:
             datas = f.readlines()
