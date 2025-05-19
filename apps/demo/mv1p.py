@@ -96,7 +96,7 @@ if __name__ == "__main__":
     from easymocap.dataset import CONFIG, MV1PMF
     parser = load_parser() #setup for  EasyMocap command-line tools.
     parser.add_argument('--skel', action='store_true')
-    args = parse_parser(parser)
+    args = parse_parser(parser) #processes the arguments passed to a parser
     help="""
   Demo code for multiple views and one person:
 
