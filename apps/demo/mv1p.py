@@ -31,7 +31,7 @@ def mv1pmf_skel(dataset, check_repro=True, args=None):
     kp3ds = [] #key points 3ds
     start, end = args.start, min(args.end, len(dataset))
     kpts_repro = None
-    for nf in tqdm(range(start, end), desc='triangulation'):
+    for nf in tqdm(range(start, end), desc='triangulation'): #this loop processes each frame and shows a progress bar labeled "triangulation"
         images, annots = dataset[nf]
         check_keypoints(annots['keypoints'], WEIGHT_DEBUFF=1, min_conf=MIN_CONF_THRES)
         keypoints3d, kpts_repro = simple_recon_person(annots['keypoints'], dataset.Pall)
