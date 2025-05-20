@@ -28,7 +28,7 @@ def mv1pmf_skel(dataset, check_repro=True, args=None):
     MIN_CONF_THRES = args.thres2d
     no_img = not (args.vis_det or args.vis_repro)
     dataset.no_img = no_img
-    kp3ds = []
+    kp3ds = [] #key points 3ds
     start, end = args.start, min(args.end, len(dataset))
     kpts_repro = None
     for nf in tqdm(range(start, end), desc='triangulation'):
